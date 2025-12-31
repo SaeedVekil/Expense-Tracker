@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+<title>Expense Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="app">
+    <div class="header">
+        <h1><i class="fas fa-money-bill-wave"></i> My Expense Tracker</h1>
+        <div class="date-display" id="currentDate"></div>
+    </div>
+
+    <div class="stats">
+        <div class="card">
+            <div class="card-icon expense"><i class="fas fa-shopping-cart"></i></div>
+            <div class="card-content">
+                <div class="card-label">Total Expenses</div>
+                <div class="card-value" id="total">€0.00</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon avg"><i class="fas fa-chart-line"></i></div>
+            <div class="card-content">
+                <div class="card-label">Avg / Day</div>
+                <div class="card-value" id="avg">€0.00</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon top"><i class="fas fa-trophy"></i></div>
+            <div class="card-content">
+                <div class="card-label">Top Category</div>
+                <div class="card-value" id="top">—</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon portfolio"><i class="fas fa-chart-pie"></i></div>
+            <div class="card-content">
+                <div class="card-label">Portfolio Value</div>
+                <div class="card-value" id="portfolio">€0.00</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="expenseForm">
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="title"><i class="fas fa-tag"></i> Title</label>
+                    <input type="text" id="title" placeholder="What did you spend on?" required>
+                </div>
+                <div class="input-group">
+                    <label for="amount"><i class="fas fa-euro-sign"></i> Amount</label>
+                    <input type="number" id="amount" step="0.01" min="0" placeholder="0.00" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="record_type"><i class="fas fa-exchange-alt"></i> Type</label>
+                    <select id="record_type">
+                        <option value="expense">Expense</option>
+                        <option value="portfolio">Portfolio</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="category"><i class="fas fa-filter"></i> Category</label>
+                    <select id="category">
+                        <option value="Transportation">🚌 Transportation</option>
+                        <option value="Food & Dining">🍕 Food & Dining</option>
+                        <option value="Shopping">🛍️ Shopping</option>
+                        <option value="Entertainment">🎬 Entertainment</option>
+                        <option value="Bills">📄 Bills</option>
+                        <option value="Healthcare">🏥 Healthcare</option>
+                        <option value="Education">📚 Education</option>
+                        <option value="Investment">📈 Investment</option>
+                        <option value="Other">📦 Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-plus-circle"></i> Add Record
+            </button>
+        </form>
+    </div>
+
+    <div class="recent-container">
+        <div class="section-header">
+            <h3><i class="fas fa-history"></i> Recent Activity</h3>
+            <div class="controls">
+                <button id="filterAll" class="filter-btn active">All</button>
+                <button id="filterExpense" class="filter-btn">Expenses</button>
+                <button id="filterPortfolio" class="filter-btn">Portfolio</button>
+            </div>
+        </div>
+        
+        <div id="recent"></div>
+        
+        <div class="summary">
+            <div class="summary-item">
+                <span>Records Count:</span>
+                <strong id="recordCount">0</strong>
+            </div>
+            <div class="summary-item">
+                <span>This Month:</span>
+                <strong id="monthTotal">€0.00</strong>
+            </div>
+            <button id="exportBtn" class="export-btn">
+                <i class="fas fa-file-export"></i> Export Data
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
