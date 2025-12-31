@@ -1,11 +1,11 @@
 # 💰 Expense Tracker
-### A modern, feature-rich expense tracking application with portfolio management, built with pure JavaScript, PHP, and MySQL. Track your daily expenses and monitor investments.
-<br>
+### A modern, feature-rich expense tracking application with portfolio management, built with pure JavaScript, PHP, and MySQL. Track your daily expenses and monitor investments.<br>
+
 ## Features
 ### Real-time Statistics: Track total expenses, daily averages, portfolio values
-### Interactive Charts: Visual representation of financial data
+### Interactive Charts: Visual representation of financial data <br>
 
-<br>
+
 ## How Everything Connects ?
 ### 1.You type "Groceries, €50, Food category" and click Submit
 ### 2.JavaScript takes your message and says: "Hey PHP, here's some new data!"
